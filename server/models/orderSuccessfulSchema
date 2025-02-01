@@ -1,0 +1,47 @@
+const mongoose = require("mongoose");
+
+const OrderSuccesfulSchema = new mongoose.Schema({
+  orderPlacedDate: {
+    type: Date,
+    required: true,
+    default: Date.now,
+  },
+  steps: [
+    {
+      title: { type: String, required: true },
+      description: { type: String, required: true },
+      date: { type: Date, required: true },
+    },
+  ],
+});
+
+OrderSuccesfulSchema .pre("save", function (next) {
+  const baseDate = this.orderPlacedDate;
+
+  this.steps = [
+    {
+      title: "Order Placed",
+      description: "Your order was placed successfully.",
+      date: baseDate,
+    },
+    {
+      title: "Fabric Pickup & Measurement",
+      description: "Your fabric and measurements will be picked up.",
+      date: new Date(baseDate.getTime() + 1 * 24 * 60 * 60 * 1000), // Next day
+    },
+    {
+      title: "Stitching Process",
+      description: "Your apparel will start getting stitched.",
+      date: new Date(baseDate.getTime() + 4 * 24 * 60 * 60 * 1000), // 4 days later
+    },
+    {
+      title: "Apparel Delivery & Payment",
+      description: "Your apparel will be delivered and payment will be completed.",
+      date: new Date(baseDate.getTime() + 5 * 24 * 60 * 60 * 1000), // 5 days later
+    },
+  ];
+
+  next();
+});
+
+module.exports = mongoose.model("OrderSuccess", OrderSuccesfulSchema );

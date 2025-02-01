@@ -1,0 +1,48 @@
+{
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "icons": [
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "/assets/sewing.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "/assets/sewing.png",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "portrait",
+  "display": "standalone",
+  "dir": "auto",
+  "lang": "en-US",
+  "name": "Doorstep Stitching",
+  "short_name": "Doorstep Stitching",
+  "start_url": "/",
+  "screenshots": [
+    {
+      "src": "/assets/sewing.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/assets/sewing.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "web+tea",
+      "url": "https://mvp-doorstep-stitching.onrender.com/tea?type=%s"
+    },
+    {
+      "protocol": "web+coffee",
+      "url": "https://mvp-doorstep-stitching.onrender.com/coffee?type=%s"
+    }
+  ]
+}
