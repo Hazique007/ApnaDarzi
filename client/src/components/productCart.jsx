@@ -158,7 +158,7 @@ const ProductCart = ({
               className={`h-full w-full flex-shrink-0 object-fit rounded-lg snap-center cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg ${
                 currentIndex === index ? "ring-2 ring-blue-500" : ""
               }`}
-              src={`https://apnadarzi-5.onrender.com/uploads/${image}`}
+              src={`http://localhost:3000/uploads/${image}`}
               alt={`Product ${index + 1}`}
             />
           ))}

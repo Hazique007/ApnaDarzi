@@ -285,6 +285,42 @@ export const updateAgentOrder = async (req, res) => {
   }
 };
 
+export const getUpdatedAgentOrder = async (req, res) => {
+  const { orderID, userID } = req.query; // Extract orderID and userID from query params
+
+  try {
+    // Validate input
+    if (!userID || !orderID) {
+      return res.status(400).json({ message: "userID and orderID are required" });
+    }
+
+    // Check if the user exists
+    const userExists = await Otp.findById(userID); // Assuming 'Otp' is your user schema
+    if (!userExists) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    // Find the agent order
+    const agentOrder = await AgentOrder.findOne({ orderID, userID }).populate("userID");
+
+    if (agentOrder) {
+      const { status } = agentOrder; // Extract the status (pending/done)
+      return res.status(200).json({
+        message: "Agent order status retrieved successfully",
+        orderStatus: status,
+        order: agentOrder,
+      });
+    } else {
+      return res.status(404).json({ message: "Agent order not found" });
+    }
+  } catch (error) {
+    console.error("Error retrieving agent order status:", error);
+    res.status(500).json({ message: "Error retrieving agent order status", error });
+  }
+};
+
+
+
 export const getAgentDetails = async (req, res) => {
   const { orderID, userID } = req.query; // Extracting the orderID and userID from the query parameters
 

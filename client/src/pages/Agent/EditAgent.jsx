@@ -9,7 +9,10 @@ import { BeatLoader } from "react-spinners";
 
 const EditAgent = () => {
   const { orderID } = useParams();
-  const userID = localStorage.getItem("userID");
+  const { addressID, userID } = useParams();
+
+
+  // const userID = localStorage.getItem("userID");
   const [mobile, setMobile] = useState(null);
 
   const [userAddress, setuserAddress] = useState(null);
@@ -29,7 +32,7 @@ const EditAgent = () => {
   const getAddress = async () => {
     try {
       const response = await axios.get(
-        `https://apnadarzi-5.onrender.com/agent/getAddressByID?addressID=${userAddressId}`
+        `http://localhost:3000/agent/getAddressByID?addressID=${userAddressId}`
       );
       console.log(response.data);
       setuserAddress(response.data?.address);
@@ -59,12 +62,12 @@ const EditAgent = () => {
       setIsLoading(true);
 
       const orderResponse = await axios.get(
-        "https://apnadarzi-5.onrender.com/orders/getOrderbyID",
+        "http://localhost:3000/orders/getOrderbyID",
         { params: { orderID } }
       );
 
       const agentResponse = await axios.get(
-        "https://apnadarzi-5.onrender.com/agent/agentorder",
+        "http://localhost:3000/agent/agentorder",
         { params: { orderID, userID } }
       );
 
@@ -111,18 +114,25 @@ const EditAgent = () => {
       const allCompleted = Object.values(orderData.status).every(
         (status) => status
       );
-
       const response = await axios.post(
-        "https://apnadarzi-5.onrender.com/agent/updateagentorder",
+        "http://localhost:3000/agent/updateagentorder",
         {
           updateData: orderData.status,
           status: allCompleted ? "done" : "pending",
         },
-        { params: { userID, orderID } }
+        {
+          params: { userID, orderID },
+        }
       );
-
       if (response.status === 200 || response.status === 201) {
         toast.success(allCompleted ? "Order Completed" : "Order Updated");
+        // Update the status state
+        setOrderData((prev) => ({
+          ...prev,
+          status: allCompleted
+            ? { fabricPickedUp: true, measurementDone: true, apparelDelivered: true, paymentReceived: true }
+            : prev.status,
+        }));
         await fetchAllOrderData();
       }
     } catch (error) {
@@ -130,6 +140,7 @@ const EditAgent = () => {
       toast.error("Error updating order status");
     }
   };
+  
 
   const { user, order, status } = orderData;
 

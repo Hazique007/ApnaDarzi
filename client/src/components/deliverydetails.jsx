@@ -10,7 +10,7 @@ const Delivery = ({ selectedAddress, onSelect }) => {
     const fetchAddresses = async () => {
       try {
         const response = await axios.get(
-          "https://apnadarzi-5.onrender.com/getAddressByUser",
+          "http://localhost:3000/getAddressByUser",
           { params: { userID } }
         );
 
@@ -61,7 +61,14 @@ const Delivery = ({ selectedAddress, onSelect }) => {
       }
     };
 
-    fetchAddresses();
+    if (!sessionStorage.getItem("hasReloaded")) {
+      sessionStorage.setItem("hasReloaded", "true");
+      window.location.reload();
+    } else {
+      fetchAddresses(); // Fetch profile data
+    }
+
+    ;
   }, [userID]);
 
   const handleAddressChange = (event) => {

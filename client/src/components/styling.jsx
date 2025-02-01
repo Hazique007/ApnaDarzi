@@ -27,7 +27,7 @@ const Styling = ({ heading, gender }) => {
   const getCategory = async () => {
     try {
       const response = await axios.get(
-        "https://apnadarzi-5.onrender.com/api/v1/category/fetchcategories",
+        "http://localhost:3000/api/v1/category/fetchcategories",
         {
           params: { gender },
         }
@@ -49,7 +49,7 @@ const Styling = ({ heading, gender }) => {
     try {
       setLoading(true);
       const res = await axios.post(
-        "https://apnadarzi-5.onrender.com/api/v1/stats/trackClick",
+        "http://localhost:3000/api/v1/stats/trackClick",
         {
           gender,
           category,

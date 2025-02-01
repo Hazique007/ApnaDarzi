@@ -10,26 +10,23 @@ const UserList = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const [UserAddressID, setUserAddressID] = useState(null);
+  const [orderStatuses, setOrderStatuses] = useState({});
 
-  // Fetch grouped orders with pagination
   const fetchOrders = async (page) => {
     try {
       setIsLoading(true);
-      const response = await axios.get(
-        "https://apnadarzi-5.onrender.com/orders/grouped",
-        {
-          params: { page, limit: 10 },
-        }
-      );
-
-      console.log("Response of data is", response.data);
+      const response = await axios.get("http://localhost:3000/orders/grouped", {
+        params: { page, limit: 10 },
+      });
 
       if (response.data.groupedOrders) {
         setOrders(response.data.groupedOrders);
-        // console.log(orders);
-
         setTotalPages(response.data.totalPages || 1);
+
+        // Fetch status for each order
+        Object.values(response.data.groupedOrders).flat().forEach((order) => {
+          updateOrderStatus(order._id, order.userID);
+        });
       }
 
       setIsLoading(false);
@@ -39,17 +36,21 @@ const UserList = () => {
     }
   };
 
-  // Update Order Status
   const updateOrderStatus = async (orderID, userID) => {
     try {
       const response = await axios.post(
-        "https://apnadarzi-5.onrender.com/agent/updateagentorder",
+        "http://localhost:3000/agent/updateagentorder",
         {},
-        { params: { userID, orderID } }
+        {
+          params: { userID, orderID },
+        }
       );
 
-      if (response.status === 200) {
-        await fetchOrders(currentPage);
+      if (response.status === 200 && response.data.orderStatus) {
+        setOrderStatuses((prevStatuses) => ({
+          ...prevStatuses,
+          [orderID]: response.data.orderStatus,
+        }));
       }
     } catch (error) {
       console.error("Error updating order status:", error);
@@ -60,7 +61,6 @@ const UserList = () => {
     fetchOrders(currentPage);
   }, [currentPage]);
 
-  // Pagination Handlers
   const handleNextPage = () => {
     if (currentPage < totalPages) {
       setCurrentPage((prevPage) => prevPage + 1);
@@ -104,12 +104,12 @@ const UserList = () => {
 
                     <div
                       className={`w-[20vw] text-center py-2 ${
-                        order.status === "done"
+                        (orderStatuses[order._id] || order.status) === "done"
                           ? "text-green-700"
                           : "text-orange-700"
                       } rounded-xl`}
                     >
-                      {order.status || "pending"}
+                      {orderStatuses[order._id] || order.status || "pending"}
                     </div>
 
                     <div className="w-[20vw] text-center cursor-pointer">
@@ -120,11 +120,6 @@ const UserList = () => {
                               "addressID",
                               order.addressID._id
                             );
-                            {
-                              console.log("order", order);
-                            }
-
-                            setUserAddressID(order.addressID._id);
                           } else {
                             console.warn(
                               "Address ID is missing for order:",
@@ -132,7 +127,7 @@ const UserList = () => {
                             );
                           }
                         }}
-                        to={`/edit-agent/${order._id}`}
+                        to={`/edit-agent/${order._id}/${order.userID}`}
                         className="text-blue-500 hover:text-blue-700"
                       >
                         Edit
@@ -146,7 +141,6 @@ const UserList = () => {
             <div className="text-center mt-10">No orders found.</div>
           )}
 
-          {/* Pagination Controls */}
           <div className="flex justify-center items-center mt-4">
             <button
               onClick={handlePreviousPage}

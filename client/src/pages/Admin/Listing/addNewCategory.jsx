@@ -41,7 +41,7 @@ const AddCategory = () => {
 
     try {
       const response = await axios.post(
-        `https://apnadarzi-5.onrender.com/api/v1/category/addCategoryData?userID=${userID}`,
+        `http://localhost:3000/api/v1/category/addCategoryData?userID=${userID}`,
         formData,
 
         {

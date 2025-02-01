@@ -60,25 +60,25 @@ const Pickup = () => {
     return "";
   };
 
-  const fetchAddresses = async () => {
-    try {
-      const response = await fetch(
-        `https://apnadarzi-5.onrender.com/getAddressByUser?userID=${localStorage.getItem(
-          "userID"
-        )}`
-      );
-      if (response.ok) {
-        const result = await response.json();
-        setAddresses(result.data);
-      }
-    } catch (error) {
-      console.error("Error fetching addresses:", error);
-    }
-  };
+  // const fetchAddresses = async () => {
+  //   try {
+  //     const response = await fetch(
+  //       `http://localhost:3000/getAddressByUser?userID=${localStorage.getItem(
+  //         "userID"
+  //       )}`
+  //     );
+  //     if (response.ok) {
+  //       const result = await response.json();
+  //       setAddresses(result.data);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error fetching addresses:", error);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchAddresses();
-  }, []);
+  // useEffect(() => {
+  //   fetchAddresses();
+  // }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -87,25 +87,31 @@ const Pickup = () => {
       alert(errorMessage);
       return;
     }
-
     try {
       const response = await fetch(
-        "https://apnadarzi-5.onrender.com/addAddressbyuserID",
+        "http://localhost:3000/addAddressbyuserID",
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+          },
           body: JSON.stringify({
             ...newAddress,
             userID: localStorage.getItem("userID"),
           }),
         }
       );
-
       if (response.ok) {
-        setNewAddress({ name: "", address1: "", address2: "", pincode: "" });
+        setNewAddress({
+          name: "",
+          address1: "",
+          address2: "",
+          pincode: "",
+        });
         setShowForm(false);
-        setShowModal(true); // Show the modal
-        fetchAddresses();
+        setShowModal(true);
+        // Reload the page
+        window.location.reload();
       } else {
         console.error("Failed to add address");
       }
@@ -113,6 +119,8 @@ const Pickup = () => {
       console.error("Error adding address:", error);
     }
   };
+  
+  
 
   return (
     <div className="p-4 px-5 flex flex-col font-poppins">

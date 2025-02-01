@@ -12,7 +12,7 @@ const OrderSummaryCard = ({ order, removeOrder }) => {
     try {
       setLoading(true);
       await axios.delete(
-        `https://apnadarzi-5.onrender.com/orders/${order._id}`
+        `http://localhost:3000/orders/${order._id}`
       );
       removeOrder(order._id);
       setLoading(false);
@@ -63,7 +63,7 @@ const OrderSummaryCard = ({ order, removeOrder }) => {
         }}
       >
         <img
-          src={`https://apnadarzi-5.onrender.com/uploads/${images?.[0]}`}
+          src={`http://localhost:3000/uploads/${images?.[0]}`}
           alt="Product"
           style={{
             width: "100%",

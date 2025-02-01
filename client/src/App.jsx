@@ -86,7 +86,7 @@ const App = () => {
           <Route path="/cart" Component={CartPage} />
           <Route path="/error" Component={Error} />
           <Route path="/orderplaced" Component={orderPlacedSuccess} />
-          <Route path="/edit-agent/:orderID" Component={EditAgent} />
+          <Route path="/edit-agent/:orderID/:userID" Component={EditAgent} />
 
           {/* Profile Sub-pages */}
           <Route path="/addresses" Component={AllAddresses} />

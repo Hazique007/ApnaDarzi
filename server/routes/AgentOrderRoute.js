@@ -6,6 +6,7 @@ import {
   updateAgentOrder,
   getAgentDetails,
   getAddressByID,
+  getUpdatedAgentOrder
 } from "../controllers/agentController.js";
 
 const router = express.Router();
@@ -20,6 +21,8 @@ router.get("/getandupdate", getAndUpdateAgentOrder);
 router.get("/agentorder", getAgentOrder);
 
 router.get("/agentorderdetails", getAgentDetails);
+
+router.get("/getupdatedagentorder",getUpdatedAgentOrder);
 
 // Route to update a specific agent order by ID
 router.post("/updateagentorder", updateAgentOrder);

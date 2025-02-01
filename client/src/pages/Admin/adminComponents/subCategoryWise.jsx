@@ -17,7 +17,7 @@ const SubCategoryWise = () => {
   const getDetails = async () => {
     try {
       const response = await axios.get(
-        "https://apnadarzi-5.onrender.com/api/v1/products/GenderCategorySubcategory",
+        "http://localhost:3000/api/v1/products/GenderCategorySubcategory",
         {
           params: { gender, category, subCategory },
         }
@@ -69,7 +69,7 @@ const SubCategoryWise = () => {
 
     try {
       const response = await axios.put(
-        `https://apnadarzi-5.onrender.com/api/v1/products/UpdateGenderCategorySubcategory?userID=${userID}`,
+        `http://localhost:3000/api/v1/products/UpdateGenderCategorySubcategory?userID=${userID}`,
         formData,
         {
           params: { gender, category, subCategory },
@@ -97,7 +97,7 @@ const SubCategoryWise = () => {
   const handleDelete = async () => {
     try {
       const response = await axios.delete(
-        "https://apnadarzi-5.onrender.com/api/v1/products/CategorySubcategoryDelete",
+        "http://localhost:3000/api/v1/products/CategorySubcategoryDelete",
         {
           params: { gender, category, subCategory },
         }
@@ -290,7 +290,7 @@ const SubCategoryWise = () => {
               <img
                 className="w-[70px] h-[70px] object-fit rounded-[10px]"
                 key={index}
-                src={`https://apnadarzi-5.onrender.com/uploads/${image}`.replace(
+                src={`http://localhost:3000/uploads/${image}`.replace(
                   /\\/g,
                   "/"
                 )}

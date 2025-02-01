@@ -63,7 +63,7 @@ const Otp = () => {
     try {
       const formattedPhone = "+" + phone;
       const response = await fetch(
-        "https://apnadarzi-5.onrender.com/api/verify-otp",
+        "http://localhost:3000/api/verify-otp",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -122,7 +122,7 @@ const Otp = () => {
 
   //     const formattedPhone = "+" + phone;
   //     const response = await fetch(
-  //       "https://apnadarzi-5.onrender.com/api/send-otp",
+  //       "http://localhost:3000/api/send-otp",
   //       {
   //         method: "POST",
   //         headers: { "Content-Type": "application/json" },
@@ -183,7 +183,7 @@ const Otp = () => {
 
       const formattedPhone = "+" + phone;
       const response = await fetch(
-        "https://apnadarzi-5.onrender.com/api/send-otp",
+        "http://localhost:3000/api/send-otp",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -229,7 +229,7 @@ const Otp = () => {
   //     if(phone===HARDCODED_PHONE){
   //       const formattedPhone = "+" + HARDCODED_PHONE;
   //     const response = await fetch(
-  //       "https://apnadarzi-5.onrender.com/api/verify-otp",
+  //       "http://localhost:3000/api/verify-otp",
   //       {
   //         method: "POST",
   //         headers: { "Content-Type": "application/json" },
@@ -241,7 +241,7 @@ const Otp = () => {
 
   //       const formattedPhone = "+" + phone;
   //     const response = await fetch(
-  //       "https://apnadarzi-5.onrender.com/api/verify-otp",
+  //       "http://localhost:3000/api/verify-otp",
   //       {
   //         method: "POST",
   //         headers: { "Content-Type": "application/json" },
@@ -275,7 +275,7 @@ const Otp = () => {
   //     console.log("api fetching");
 
   //     const response = await fetch(
-  //       "https://apnadarzi-5.onrender.com/api/verify-otp",
+  //       "http://localhost:3000/api/verify-otp",
   //       {
   //         method: "POST",
   //         headers: { "Content-Type": "application/json" },
@@ -312,7 +312,7 @@ const Otp = () => {
     try {
       const formattedPhone = "+" + phone;
       const response = await fetch(
-        "https://apnadarzi-5.onrender.com/api/send-otp",
+        "http://localhost:3000/api/send-otp",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
