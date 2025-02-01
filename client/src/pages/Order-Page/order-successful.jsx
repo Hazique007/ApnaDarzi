@@ -27,7 +27,7 @@ const OrderSuccessful = () => {
   const fetchOrderStatus = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/agent/agentorderdetails?orderID=${orderID}&userID=${userID}`
+        `https://apnadarzi-31.onrender.com/agent/agentorderdetails?orderID=${orderID}&userID=${userID}`
       );
       console.log(response.data);
 

@@ -32,7 +32,7 @@ const EditAgent = () => {
   const getAddress = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/agent/getAddressByID?addressID=${userAddressId}`
+        `https://apnadarzi-31.onrender.com/agent/getAddressByID?addressID=${userAddressId}`
       );
       console.log(response.data);
       setuserAddress(response.data?.address);
@@ -62,12 +62,12 @@ const EditAgent = () => {
       setIsLoading(true);
 
       const orderResponse = await axios.get(
-        "http://localhost:3000/orders/getOrderbyID",
+        "https://apnadarzi-31.onrender.com/orders/getOrderbyID",
         { params: { orderID } }
       );
 
       const agentResponse = await axios.get(
-        "http://localhost:3000/agent/agentorder",
+        "https://apnadarzi-31.onrender.com/agent/agentorder",
         { params: { orderID, userID } }
       );
 
@@ -115,7 +115,7 @@ const EditAgent = () => {
         (status) => status
       );
       const response = await axios.post(
-        "http://localhost:3000/agent/updateagentorder",
+        "https://apnadarzi-31.onrender.com/agent/updateagentorder",
         {
           updateData: orderData.status,
           status: allCompleted ? "done" : "pending",

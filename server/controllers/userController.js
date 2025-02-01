@@ -1,4 +1,4 @@
-import Otp from "../models/UserSchema.js";
+import Otp from "../models/userSchema.js";
 import otpVerification from "../helpers/otpValidate.js";
 import otpGenerator from "otp-generator";
 import twilio from "twilio";

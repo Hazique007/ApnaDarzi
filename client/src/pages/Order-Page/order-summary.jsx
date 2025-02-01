@@ -47,7 +47,7 @@ const OrderSummary = () => {
     const fetchAddresses = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/getAddressByUser",
+          "https://apnadarzi-31.onrender.com/getAddressByUser",
           { params: { userID } }
         );
 
@@ -105,7 +105,7 @@ const OrderSummary = () => {
 
     try {
       // Step 1: Store Selected Address in DB
-      // const addressresponse = await axios.post("http://localhost:3000/api/v1/selectedaddress/save", {
+      // const addressresponse = await axios.post("https://apnadarzi-31.onrender.com/api/v1/selectedaddress/save", {
       //   userID: userID,
       //   addressID: selectedAddress._id,
       // });
@@ -134,7 +134,7 @@ const OrderSummary = () => {
       console.log(orderData);
 
       await axios.post(
-        "http://localhost:3000/orders/create",
+        "https://apnadarzi-31.onrender.com/orders/create",
         orderData
       );
       navigate("/orderplaced");

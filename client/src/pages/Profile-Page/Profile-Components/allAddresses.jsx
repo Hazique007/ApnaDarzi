@@ -51,7 +51,7 @@ const AllAddresses = () => {
     const fetchAddresses = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/getAddressByUser",
+          "https://apnadarzi-31.onrender.com/getAddressByUser",
           {
             params: { userID: userID },
           }
@@ -113,7 +113,7 @@ const AllAddresses = () => {
       const updatedAddress = { ...newAddress, userID: currentUserID }; // Add userID to the address object
 
       const response = await fetch(
-        "http://localhost:3000/addAddressbyuserID",
+        "https://apnadarzi-31.onrender.com/addAddressbyuserID",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -146,7 +146,7 @@ const AllAddresses = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:3000/update/${editingAddress._id}`,
+        `https://apnadarzi-31.onrender.com/update/${editingAddress._id}`,
         editingAddress
       );
       if (response.data) {
@@ -165,7 +165,7 @@ const AllAddresses = () => {
   const handleDeleteAddress = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/delete/${id}`,
+        `https://apnadarzi-31.onrender.com/delete/${id}`,
         {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
