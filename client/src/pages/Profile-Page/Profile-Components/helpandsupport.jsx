@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import TopNav from "../../../components/TopNav";
 import Navbar from "../../../components/Navbar";
 import ReactGA from "react-ga4";
