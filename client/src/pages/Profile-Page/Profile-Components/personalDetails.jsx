@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import TopNav from "../../../components/TopNav";
 import { FiCamera } from "react-icons/fi";
 
-const API_BASE_URL = "https://apnadarzi-31.onrender.com";
+const API_BASE_URL = "https://apnadarzi-311.onrender.com";
 const userID = localStorage.getItem("userID");
 
 const PersonalDetails = () => {

@@ -34,7 +34,7 @@ const FashionProductDetails = () => {
       try {
         setLoading(true);
         const response = await axios.get(
-          `https://apnadarzi-31.onrender.com/api/v1/products/getGenderPlusCategory`,
+          `https://apnadarzi-311.onrender.com/api/v1/products/getGenderPlusCategory`,
           {
             params: { gender, category },
           }

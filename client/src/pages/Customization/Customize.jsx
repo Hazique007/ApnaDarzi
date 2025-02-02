@@ -126,7 +126,7 @@ const Customize = () => {
             className="relative w-[320px] h-[282px] aspect-[1/1.5] sm:w-full sm:h-[350px] overflow-x-hidden overflow-y-hidden snap-x snap-mandatory scroll-smooth rounded-[10px] px-4"
           >
             <img
-              src={`https://apnadarzi-31.onrender.com/uploads/${productItem.images[currentImageIndex]}`}
+              src={`https://apnadarzi-311.onrender.com/uploads/${productItem.images[currentImageIndex]}`}
               alt="Customize clothing"
               className="w-full h-full object-fit rounded-[20px]"
             />

@@ -17,11 +17,11 @@ const ListingComponent = () => {
 
       const [maleResponse, femaleResponse] = await Promise.all([
         axios.get(
-          "https://apnadarzi-31.onrender.com/api/v1/category/getGenderWiseCategory",
+          "https://apnadarzi-311.onrender.com/api/v1/category/getGenderWiseCategory",
           { params: { gender: "Male" } }
         ),
         axios.get(
-          "https://apnadarzi-31.onrender.com/api/v1/category/getGenderWiseCategory",
+          "https://apnadarzi-311.onrender.com/api/v1/category/getGenderWiseCategory",
           { params: { gender: "Female" } }
         ),
       ]);

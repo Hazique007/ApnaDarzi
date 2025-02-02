@@ -18,7 +18,7 @@ const OrderShowCard = ({ order }) => {
     const fetchOrderData = async () => {
       try {
         const response = await axios.get(
-          "https://apnadarzi-31.onrender.com/orders/getorder"
+          "https://apnadarzi-311.onrender.com/orders/getorder"
         );
         console.log(response);
         setLoading(false);
@@ -48,7 +48,7 @@ const OrderShowCard = ({ order }) => {
   }
 
   const productImage = productData?.images?.[0]
-    ? `https://apnadarzi-31.onrender.com/uploads/${productData.images[0]}`
+    ? `https://apnadarzi-311.onrender.com/uploads/${productData.images[0]}`
     : "placeholder-image.png";
 
   return (

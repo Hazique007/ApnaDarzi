@@ -18,7 +18,7 @@ const FabricPage = () => {
   const fetchFabrics = async (gender, category) => {
     try {
       const response = await axios.get(
-        "https://apnadarzi-31.onrender.com/api/v1/fabric/getFabricGenderPlusCategory",
+        "https://apnadarzi-311.onrender.com/api/v1/fabric/getFabricGenderPlusCategory",
         {
           params: {
             gender: FabricData.gender,

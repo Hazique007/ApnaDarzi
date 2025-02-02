@@ -18,7 +18,7 @@ const EditCategory = () => {
   const getDetails = async () => {
     try {
       const response = await axios.get(
-        `https://apnadarzi-31.onrender.com/api/v1/products/GenderCategory?userID=${userID}`,
+        `https://apnadarzi-311.onrender.com/api/v1/products/GenderCategory?userID=${userID}`,
         {
           params: { gender, category },
         }
@@ -62,7 +62,7 @@ const EditCategory = () => {
       }
 
       const response = await axios.put(
-        `https://apnadarzi-31.onrender.com/api/v1/products/UpdateGenderCategory?userID=${userID}`,
+        `https://apnadarzi-311.onrender.com/api/v1/products/UpdateGenderCategory?userID=${userID}`,
         formData,
         {
           params: { gender, category, subCategory },
@@ -86,7 +86,7 @@ const EditCategory = () => {
   const handleDelete = async () => {
     try {
       const response = await axios.get(
-        `https://apnadarzi-31.onrender.com/api/v1/category/deleteCategory?userID=${userID}`,
+        `https://apnadarzi-311.onrender.com/api/v1/category/deleteCategory?userID=${userID}`,
         {
           params: { gender, category },
         }
@@ -211,7 +211,7 @@ const EditCategory = () => {
             />
           ) : (
             <img
-              src={` https://apnadarzi-31.onrender.com/uploads/${details.categoryImages}`}
+              src={` https://apnadarzi-311.onrender.com/uploads/${details.categoryImages}`}
               alt="Preview"
               className="w-[70px] h-[70px] object-cover rounded-md"
             />

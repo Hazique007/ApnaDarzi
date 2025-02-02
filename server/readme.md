@@ -7,7 +7,7 @@ This API provides endpoints for managing products, categories, fabrics, addresse
 ## Base URL
 
 ```
-https://apnadarzi-31.onrender.com
+https://apnadarzi-311.onrender.com
 ```
 
 ## Authentication
@@ -254,7 +254,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X POST https://apnadarzi-31.onrender.com/api/send-otp -d '{"phoneNumber": "+1234567890"}' -H "Content-Type: application/json"
+        curl -X POST https://apnadarzi-311.onrender.com/api/send-otp -d '{"phoneNumber": "+1234567890"}' -H "Content-Type: application/json"
         ```
 
 - **POST /api/verify-otp**
@@ -267,7 +267,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X POST https://apnadarzi-31.onrender.com/api/verify-otp -d '{"phoneNumber": "+1234567890", "otp": "123456"}' -H "Content-Type: application/json"
+        curl -X POST https://apnadarzi-311.onrender.com/api/verify-otp -d '{"phoneNumber": "+1234567890", "otp": "123456"}' -H "Content-Type: application/json"
         ```
 
 - **GET /api/getUserDetails**
@@ -284,7 +284,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X GET https://apnadarzi-31.onrender.com/api/getUserDetails -H "Authorization: Bearer <token>"
+        curl -X GET https://apnadarzi-311.onrender.com/api/getUserDetails -H "Authorization: Bearer <token>"
         ```
 
 ### Product Routes
@@ -305,7 +305,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X GET https://apnadarzi-31.onrender.com/api/v1/products/allProducts
+        curl -X GET https://apnadarzi-311.onrender.com/api/v1/products/allProducts
         ```
 
 - **GET /api/v1/products/getAllCategory**
@@ -323,7 +323,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X GET https://apnadarzi-31.onrender.com/api/v1/products/getAllCategory
+        curl -X GET https://apnadarzi-311.onrender.com/api/v1/products/getAllCategory
         ```
 
 ### Order Routes
@@ -341,7 +341,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X POST https://apnadarzi-31.onrender.com/orders/create -d '{"userId": "user123", "products": [{"id": "product123", "quantity": 1}]}' -H "Content-Type: application/json"
+        curl -X POST https://apnadarzi-311.onrender.com/orders/create -d '{"userId": "user123", "products": [{"id": "product123", "quantity": 1}]}' -H "Content-Type: application/json"
         ```
 
 - **PUT /orders/updatestatus**
@@ -354,7 +354,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X PUT https://apnadarzi-31.onrender.com/orders/updatestatus -d '{"orderId": "order123", "status": "shipped"}' -H "Content-Type: application/json"
+        curl -X PUT https://apnadarzi-311.onrender.com/orders/updatestatus -d '{"orderId": "order123", "status": "shipped"}' -H "Content-Type: application/json"
         ```
 
 ### Profile Routes
@@ -372,7 +372,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X POST https://apnadarzi-31.onrender.com/profile -d '{"userId": "user123", "name": "John Doe"}' -H "Content-Type: application/json"
+        curl -X POST https://apnadarzi-311.onrender.com/profile -d '{"userId": "user123", "name": "John Doe"}' -H "Content-Type: application/json"
         ```
 
 - **GET /profile/:userId**
@@ -389,7 +389,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X GET https://apnadarzi-31.onrender.com/profile/user123
+        curl -X GET https://apnadarzi-311.onrender.com/profile/user123
         ```
 
 ### Address Routes
@@ -408,7 +408,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X POST https://apnadarzi-31.onrender.com/addAddressbyuserID -d '{"userId": "user123", "address": "123 Main St"}' -H "Content-Type: application/json"
+        curl -X POST https://apnadarzi-311.onrender.com/addAddressbyuserID -d '{"userId": "user123", "address": "123 Main St"}' -H "Content-Type: application/json"
         ```
 
 - **GET /list**
@@ -427,7 +427,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X GET https://apnadarzi-31.onrender.com/list
+        curl -X GET https://apnadarzi-311.onrender.com/list
         ```
 
 ### Cart Routes
@@ -451,7 +451,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X POST https://apnadarzi-31.onrender.com/add-to-cart -d '{"userId": "user123", "productId": "product123", "quantity": 1}' -H "Content-Type: application/json"
+        curl -X POST https://apnadarzi-311.onrender.com/add-to-cart -d '{"userId": "user123", "productId": "product123", "quantity": 1}' -H "Content-Type: application/json"
         ```
 
 ### Agent Order Routes
@@ -469,7 +469,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X POST https://apnadarzi-31.onrender.com/createagentorder -d '{"agentId": "agent123", "orderId": "order123"}' -H "Content-Type: application/json"
+        curl -X POST https://apnadarzi-311.onrender.com/createagentorder -d '{"agentId": "agent123", "orderId": "order123"}' -H "Content-Type: application/json"
         ```
 
 - **GET /getandupdate**
@@ -485,7 +485,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X GET https://apnadarzi-31.onrender.com/getandupdate
+        curl -X GET https://apnadarzi-311.onrender.com/getandupdate
         ```
 
 ### Landing Page Routes
@@ -500,7 +500,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X POST https://apnadarzi-31.onrender.com/addLandingPageImages -d '{"images": ["image1.jpg", "image2.jpg"]}' -H "Content-Type: application/json"
+        curl -X POST https://apnadarzi-311.onrender.com/addLandingPageImages -d '{"images": ["image1.jpg", "image2.jpg"]}' -H "Content-Type: application/json"
         ```
 
 - **GET /getLandingPageImages**
@@ -513,7 +513,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X GET https://apnadarzi-31.onrender.com/getLandingPageImages
+        curl -X GET https://apnadarzi-311.onrender.com/getLandingPageImages
         ```
 
 ### Trending Routes
@@ -528,7 +528,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X POST https://apnadarzi-31.onrender.com/addTrendingImages -d '{"images": ["image1.jpg", "image2.jpg"]}' -H "Content-Type: application/json"
+        curl -X POST https://apnadarzi-311.onrender.com/addTrendingImages -d '{"images": ["image1.jpg", "image2.jpg"]}' -H "Content-Type: application/json"
         ```
 
 - **GET /getTrendingPageImages**
@@ -541,7 +541,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X GET https://apnadarzi-31.onrender.com/getTrendingPageImages
+        curl -X GET https://apnadarzi-311.onrender.com/getTrendingPageImages
         ```
 
 ### Fashion Routes
@@ -556,7 +556,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X POST https://apnadarzi-31.onrender.com/addFashionImages -d '{"images": ["image1.jpg", "image2.jpg"]}' -H "Content-Type: application/json"
+        curl -X POST https://apnadarzi-311.onrender.com/addFashionImages -d '{"images": ["image1.jpg", "image2.jpg"]}' -H "Content-Type: application/json"
         ```
 
 - **GET /getFashionPageImages**
@@ -569,7 +569,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X GET https://apnadarzi-31.onrender.com/getFashionPageImages
+        curl -X GET https://apnadarzi-311.onrender.com/getFashionPageImages
         ```
 
 ### Category Routes
@@ -590,7 +590,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X GET https://apnadarzi-31.onrender.com/fetchcategories
+        curl -X GET https://apnadarzi-311.onrender.com/fetchcategories
         ```
 
 - **POST /addCategoryData**
@@ -606,7 +606,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X POST https://apnadarzi-31.onrender.com/addCategoryData -d '{"name": "Category Name", "image": "category.jpg"}' -H "Content-Type: application/json"
+        curl -X POST https://apnadarzi-311.onrender.com/addCategoryData -d '{"name": "Category Name", "image": "category.jpg"}' -H "Content-Type: application/json"
         ```
 
 ### Click Routes
@@ -621,7 +621,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X POST https://apnadarzi-31.onrender.com/trackClick -d '{"elementId": "button123"}' -H "Content-Type: application/json"
+        curl -X POST https://apnadarzi-311.onrender.com/trackClick -d '{"elementId": "button123"}' -H "Content-Type: application/json"
         ```
 
 - **GET /getClickStats**
@@ -637,7 +637,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X GET https://apnadarzi-31.onrender.com/getClickStats
+        curl -X GET https://apnadarzi-311.onrender.com/getClickStats
         ```
 
 ### Order Summary Routes
@@ -655,7 +655,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X POST https://apnadarzi-31.onrender.com/ordersummary -d '{"userId": "user123", "orderId": "order123"}' -H "Content-Type: application/json"
+        curl -X POST https://apnadarzi-311.onrender.com/ordersummary -d '{"userId": "user123", "orderId": "order123"}' -H "Content-Type: application/json"
         ```
 
 - **GET /ordersummary/:userId**
@@ -672,7 +672,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X GET https://apnadarzi-31.onrender.com/ordersummary/user123
+        curl -X GET https://apnadarzi-311.onrender.com/ordersummary/user123
         ```
 
 ### Personal Details Routes
@@ -691,7 +691,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X GET https://apnadarzi-31.onrender.com/listpersonal -H "Authorization: Bearer <token>"
+        curl -X GET https://apnadarzi-311.onrender.com/listpersonal -H "Authorization: Bearer <token>"
         ```
 
 - **POST /uploadProfilePicture**
@@ -704,7 +704,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X POST https://apnadarzi-31.onrender.com/uploadProfilePicture -F "profilePicture=@/path/to/picture.jpg" -H "Authorization: Bearer <token>"
+        curl -X POST https://apnadarzi-311.onrender.com/uploadProfilePicture -F "profilePicture=@/path/to/picture.jpg" -H "Authorization: Bearer <token>"
         ```
 
 - **POST /addOrUpdate**
@@ -721,7 +721,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X POST https://apnadarzi-31.onrender.com/addOrUpdate -d '{"userId": "user123", "name": "John Doe", "email": "john.doe@example.com"}' -H "Content-Type: application/json"
+        curl -X POST https://apnadarzi-311.onrender.com/addOrUpdate -d '{"userId": "user123", "name": "John Doe", "email": "john.doe@example.com"}' -H "Content-Type: application/json"
         ```
 
 - **PUT /edit/:userID**
@@ -734,7 +734,7 @@ URL
         ```
     - **Example**:
         ```bash
-        curl -X PUT https://apnadarzi-31.onrender.com/edit/user123 -d '{"name": "John Doe", "email": "john.doe@example.com"}' -H "Content-Type: application/json"
+        curl -X PUT https://apnadarzi-311.onrender.com/edit/user123 -d '{"name": "John Doe", "email": "john.doe@example.com"}' -H "Content-Type: application/json"
         ```
 
 <<<<<<< HEAD

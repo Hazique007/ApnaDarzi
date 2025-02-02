@@ -63,7 +63,7 @@ const Pickup = () => {
   // const fetchAddresses = async () => {
   //   try {
   //     const response = await fetch(
-  //       `https://apnadarzi-31.onrender.com/getAddressByUser?userID=${localStorage.getItem(
+  //       `https://apnadarzi-311.onrender.com/getAddressByUser?userID=${localStorage.getItem(
   //         "userID"
   //       )}`
   //     );
@@ -89,7 +89,7 @@ const Pickup = () => {
     }
     try {
       const response = await fetch(
-        "https://apnadarzi-31.onrender.com/addAddressbyuserID",
+        "https://apnadarzi-311.onrender.com/addAddressbyuserID",
         {
           method: "POST",
           headers: {

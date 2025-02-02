@@ -15,7 +15,7 @@ const UserList = () => {
   const fetchOrders = async (page) => {
     try {
       setIsLoading(true);
-      const response = await axios.get("https://apnadarzi-31.onrender.com/orders/grouped", {
+      const response = await axios.get("https://apnadarzi-311.onrender.com/orders/grouped", {
         params: { page, limit: 10 },
       });
 
@@ -39,7 +39,7 @@ const UserList = () => {
   const updateOrderStatus = async (orderID, userID) => {
     try {
       const response = await axios.post(
-        "https://apnadarzi-31.onrender.com/agent/updateagentorder",
+        "https://apnadarzi-311.onrender.com/agent/updateagentorder",
         {},
         {
           params: { userID, orderID },
